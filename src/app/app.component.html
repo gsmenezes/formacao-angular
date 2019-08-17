@@ -1,5 +1,5 @@
-<ap-photo url='https://br.seaicons.com/wp-content/uploads/2017/03/blue-heart-icon.png' description="Coração azul">
+<ap-photo 
+ *ngFor="let photo of photos" 
+ [url]="photo.url" 
+ [description]="photo.description">
 </ap-photo>
-
-<ap-photo url='https://i2.wp.com/multarte.com.br/wp-content/uploads/2018/10/coracao-png.png?fit=2400%2C1706&ssl=1'
-    description="Coração"></ap-photo>
