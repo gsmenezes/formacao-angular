@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PhotoService } from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  photos = [
-    {
-      url: 'https://br.seaicons.com/wp-content/uploads/2017/03/blue-heart-icon.png',
-      description: 'Coração azul',
-    },
-    {
-      url: 'https://i2.wp.com/multarte.com.br/wp-content/uploads/2018/10/coracao-png.png?fit=2400%2C1706&ssl=1',
-      description: 'Coração',
-    }
-  ];
+  photos: any [] = [];
+
+  constructor(private photoService: PhotoService) { }
+
+  ngOnInit(): void {
+
+    this.photoService
+      .listFromUser('flavio')
+      .subscribe(photos => this.photos = photos);
+
+  }
 
 }
