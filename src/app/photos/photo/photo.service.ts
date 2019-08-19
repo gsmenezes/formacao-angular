@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Photo } from './photo';
 
-const API = 'http://localhost:3000/flavio/photos';
+const API = 'http://localhost:3000';
 
 @Injectable({ providedIn: 'root' })
 export class PhotoService {
