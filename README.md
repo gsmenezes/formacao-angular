@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
+## About 
+
+Photo management project. 
+For proper operation: 
+Download the server: `https://s3.amazonaws.com/caelum-online-public/865-angular/api.zip`
+Run: `npm install`  
+And finally, run: `npm start`.
+
+To see the photos, go to: `http://localhost:4200/user/flavio`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -25,3 +35,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
