@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SignUpService } from './signup.service';
 import { AbstractControl } from '@angular/forms';
-import { debounceTime, switchMap, map, first } from 'rxjs/operators';
+import { debounceTime, switchMap, map, first, tap } from 'rxjs/operators';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 
 export class UserNotTakenValidatorService {
 
@@ -20,7 +18,8 @@ export class UserNotTakenValidatorService {
                     this.signUpService.checkUserNameTaken(userName)
                 ))
                 .pipe(map(isTaken => isTaken ? { userNameTaken: true } : null))
+                .pipe(tap(r => console.log(r)))
                 .pipe(first());
-    }
+        }
     }
 }

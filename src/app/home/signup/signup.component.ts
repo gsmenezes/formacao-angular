@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 
 @Component({
-    templateUrl: './signup.component.html'
+    templateUrl: './signup.component.html',
+    providers: [UserNotTakenValidatorService]
 })
 
 export class SignUpComponent implements OnInit {
@@ -22,8 +23,6 @@ export class SignUpComponent implements OnInit {
         private platformDetectorService: PlatformDetectorService) { }
 
     ngOnInit(): void {
-        this.platformDetectorService.isPlatformBrowser() &&
-            this.emailInput.nativeElement.focus();
         this.signupForm = this.formBuilder.group({
             email: ['',
                 [Validators.required,
@@ -48,6 +47,8 @@ export class SignUpComponent implements OnInit {
                 ]
             ]
         });
+        this.platformDetectorService.isPlatformBrowser() &&
+            this.emailInput.nativeElement.focus();
     }
 
     signup() {

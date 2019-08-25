@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent {
 
-    user$: Observable<User>
+    user$: Observable<User>;
 
     constructor(private userService: UserService,
         private router: Router) {
